@@ -6,8 +6,16 @@ class Battle < Sinatra::Base
     register Sinatra::Reloader
   end
 
-  # our routes would go here
+get '/' do
+  erb :index
+end
 
-  # # Start the server if this file is executed directly (do not change the line below)
+post '/names' do
+  @player_01_name = params[:player_01_name]
+  @player_02_name = params[:player_02_name]
+  erb :play
+end
+
+  # Start the server if this file is executed directly (do not change the line below)
   run! if app_file == $0
 end
