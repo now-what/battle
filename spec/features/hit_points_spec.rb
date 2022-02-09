@@ -13,10 +13,7 @@
 
 feature 'View hit points' do
     scenario 'see Player 2 hit points' do
-      visit('/')
-      fill_in :player_01_name, with: 'Francesco'
-      fill_in :player_02_name, with: 'Sarah'
-      click_button 'Enter arena'
+    sign_in_and_play
       expect(page).to have_content 'Sarah: 60HP'
     end
   end
