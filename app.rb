@@ -23,6 +23,10 @@ get '/play' do
   erb :play
 end
 
+# get '/points' do
+#   # erb :play
+#   "Player two has 50 points"
+# end  
   # Start the server if this file is executed directly (do not change the line below)
   run! if app_file == $0
 end
