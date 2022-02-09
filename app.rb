@@ -12,14 +12,14 @@ get '/' do
 end
 
 post '/names' do
-  @player_01_name = session[params[:player_01_name]]
-  @player_02_name = session[params[:player_02_name]]
-  # @player_01_name = params[:player_01_name]
-  # @player_02_name = params[:player_02_name]
-  # erb :play
+  session[:player_01_name] = params[:player_01_name]
+  session[:player_02_name] = params[:player_02_name]
+  redirect '/play'
 end
 
 get '/play' do
+  @player_01_name = session[:player_01_name]
+  @player_02_name = session[:player_02_name]
   erb :play
 end
 

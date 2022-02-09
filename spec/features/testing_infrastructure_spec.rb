@@ -15,6 +15,6 @@ feature 'Enter player names' do
   fill_in 'player_01_name', with: 'Francesco'
   fill_in 'player_02_name', with: 'Bromley'
   click_on 'Enter arena'
-  expect(page).to have_content 'Francesco vs Bromley'
+  expect(page).to have_content 'Player one: Francesco vs Player two: Bromley'
   end
 end
